@@ -1,0 +1,2 @@
+class ToppingType < ApplicationRecord
+end
