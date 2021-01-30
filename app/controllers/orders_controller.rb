@@ -6,9 +6,9 @@ class OrdersController < ApplicationController
     def create
         order = Order.new(order_params)
         if order.save
-            render({json: customer, except: [:created_at, :updated_at]})
+            render({json: order, except: [:created_at, :updated_at]})
         else
-            render json: customer.errors, status: :unprocessable_entity
+            render json: order.errors, status: :unprocessable_entity
         end
     end
 
