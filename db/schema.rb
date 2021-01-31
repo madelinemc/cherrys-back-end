@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_26_231432) do
+ActiveRecord::Schema.define(version: 2021_01_31_204424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "base_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "bases", force: :cascade do |t|
+    t.bigint "base_type_id", null: false
+    t.bigint "order_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["base_type_id"], name: "index_bases_on_base_type_id"
+    t.index ["order_id"], name: "index_bases_on_order_id"
+  end
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
@@ -60,6 +75,8 @@ ActiveRecord::Schema.define(version: 2021_01_26_231432) do
     t.index ["topping_type_id"], name: "index_toppings_on_topping_type_id"
   end
 
+  add_foreign_key "bases", "base_types"
+  add_foreign_key "bases", "orders"
   add_foreign_key "orders", "customers"
   add_foreign_key "scoops", "flavors"
   add_foreign_key "scoops", "orders"

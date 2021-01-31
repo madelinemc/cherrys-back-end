@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :customers, only: [:index, :create]
 
-  resources :order, only: [:create, :update, :destroy]
+  resources :orders, only: [:create, :update, :destroy]
 
   resources :flavors, only: [:index]
   resources :topping_types, only: [:index]

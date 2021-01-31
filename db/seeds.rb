@@ -8,6 +8,7 @@
 
 Flavor.destroy_all
 ToppingType.destroy_all
+BaseType.destroy_all
 
 choc = Flavor.create(name: "Chocolate")
 van = Flavor.create(name: "Vanilla")
@@ -21,5 +22,7 @@ strawb = ToppingType.create(name: "Strawberry Sauce")
 fudge = ToppingType.create(name: "Fudge Sauce")
 whip = ToppingType.create(name: "Whip Cream")
 sprink = ToppingType.create(name: "Sprinkles")
-crunch = ToppingType.create(name: "Toffee Crunchies")
 cherry = ToppingType.create(name: "Cherry on Top")
+
+cup = BaseType.create(name: "Cup")
+cone = BaseType.create(name: "Cone")

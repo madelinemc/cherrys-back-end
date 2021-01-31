@@ -1,7 +1,7 @@
 class ToppingTypesController < ApplicationController
 
     def index
-        topping_types = Topping_Type.all
+        topping_types = ToppingType.all
         render json: topping_types
     end
 
