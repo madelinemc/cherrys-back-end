@@ -6,7 +6,12 @@ Rails.application.routes.draw do
   resources :orders, only: [:create, :update, :destroy]
 
   resources :flavors, only: [:index]
+  resources :scoops, only: [:create]
+
   resources :topping_types, only: [:index]
+  resources :toppings, only: [:create]
+
   resources :base_types, only: [:index]
+  resources :bases, only: [:create]
 
 end

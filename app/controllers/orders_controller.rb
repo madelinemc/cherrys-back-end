@@ -16,7 +16,6 @@ class OrdersController < ApplicationController
     end
 
     def update
-        byebug
         order = Order.find_by_id(params[:id])
         order.update(time_ordered: Time.now)
     end
