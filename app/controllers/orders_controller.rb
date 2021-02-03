@@ -1,9 +1,9 @@
 class OrdersController < ApplicationController
 
-    def index
-        order = Order.all
-        render json: order
-    end
+    # def index
+    #     order = Order.all
+    #     render json: order
+    # end
 
     def create
         order = Order.new(order_params)
@@ -16,9 +16,14 @@ class OrdersController < ApplicationController
     end
 
     def update
+        order = Order.find_by(params[:order][:id])
+        order.update(order_params)
+        # render({json: order, only: [:time_ordered]})
     end
 
     def destroy
+        order = Order.find_by(params[:order][:id])
+        order.destroy
     end
     
 

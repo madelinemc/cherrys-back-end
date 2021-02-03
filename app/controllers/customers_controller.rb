@@ -1,13 +1,8 @@
 class CustomersController < ApplicationController
 
-    def index
-        @flavor = Flavor.all
-        render json: @flavor
-    end
-
     def create
 
-        customer = Customer.new(customer_params)
+        customer = Customer.find_or_create_by(customer_params)
         if customer.save
             render({json: customer, except: [:created_at, :updated_at]})
         else
