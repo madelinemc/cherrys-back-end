@@ -3,7 +3,7 @@ class ToppingsController < ApplicationController
     def create
 
         topping = Topping.create(topping_params)
-        if base.save
+        if topping.save
             render({json: topping, except: [:created_at, :updated_at]})
         else
             render json: topping.errors, status: :unprocessable_entity

@@ -6,4 +6,7 @@ class Order < ApplicationRecord
 
   has_many :toppings
   has_many :topping_types, through: :toppings
+
+  has_many :bases
+  has_many :base_types, through: :bases
 end
