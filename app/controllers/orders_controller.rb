@@ -16,9 +16,9 @@ class OrdersController < ApplicationController
     end
 
     def update
-        order = Order.find_by(params[:order][:id])
-        order.update(order_params)
-        # render({json: order, only: [:time_ordered]})
+        byebug
+        order = Order.find_by_id(params[:id])
+        order.update(time_ordered: Time.now)
     end
 
     def destroy
