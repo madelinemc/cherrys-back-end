@@ -1,24 +1,29 @@
-# README
+# Cherry's - Back-End
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## About:
+Cherry's was created for Flatiron School's phase 4 project as a playful and interactive way to build and place an order for an ice cream treat. It was made with a Javascript front-end and Rails API back-end. 
 
-Things you may want to cover:
+## Software Used:
+* Ruby on Rails as an API
+* Active Record
+* Postgres database
+* JavaScript
+* JavaScript Drag and Drop API
 
-* Ruby version
+## Installation:
+1. Fork and clone this repo onto your local machine and change into the directory
 
-* System dependencies
+2. In your terminal run: 
+```$ bundle install```
 
-* Configuration
+3. To create the database and populate the app with ice cream flavors, toppings, and base options, run: 
+```$ rails db:migrate```
+```$ rails db:seed```
 
-* Database creation
+4. To set up the server run: 
+```$ rails s```
+    
+5. Before you can place your ice cream order, you'll have to get the front-end set up too: [Cherry's - Front-End](https://github.com/madelinemc/cherrys-front-end) 🍦
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## License:
+This project is licensed under the MIT License.
